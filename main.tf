@@ -63,7 +63,7 @@ resource "aws_instance" "jump_server" {
   ami           = "ami-0c2b8ca1dad447f8a" # Amazon Linux 2 AMI
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.public_subnet.id
-  key_name      = "labsuser"
+  key_name      = "vockey"
   security_groups = [aws_security_group.web_sg.name]
 
   tags = {
@@ -77,7 +77,7 @@ resource "aws_instance" "web_servers" {
   ami           = "ami-0c2b8ca1dad447f8a"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.public_subnet.id
-  key_name      = "labsuser"
+  key_name      = "vockey"
   security_groups = [aws_security_group.web_sg.name]
 
   tags = {
